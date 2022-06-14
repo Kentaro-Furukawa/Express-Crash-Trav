@@ -1,0 +1,17 @@
+<h1>{{{title}}}</h1>
+<p>This is member app home.</p>
+
+<form action="/api/members" method="POST">
+    input your name: <input type="text" name="name" />
+    input email: <input type="text" name="email" />
+    <input type="submit" value="submit" />
+</form>
+
+
+<ul>
+    {{#each members}}
+        <li>{{{name}}} 👉 {{{email}}}</li>
+    {{/each}}
+</ul>
+
+<a href="/api/members">Show members in JSON</a>
