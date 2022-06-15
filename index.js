@@ -1,6 +1,6 @@
 import express from 'express';
 import path from 'path';
-import exphbs from 'express-handlebars';
+import { engine } from 'express-handlebars';
 import { fileURLToPath } from 'url';
 import { logger } from './middleware/logger.js';
 import routes from './routes/api/members.js';
@@ -15,7 +15,7 @@ const app = express();
 // app.use(logger);
 
 // Handlebars Middleware
-app.engine('handlebars', exphbs.engine({ defaultLayout: false }));
+app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
